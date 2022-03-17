@@ -1,4 +1,5 @@
 class HomesController < ApplicationController
-  def top
+  def new
+    @book = Book.new
   end
 end
