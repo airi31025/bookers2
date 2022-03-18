@@ -6,7 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -15,6 +15,12 @@
       <% if user_signed_in? %>
         <li>
           <%= link_to"Home",homes_top_path %>
+        </li>
+        <li>
+          <%= link_to"Users",
+        </li>
+        <li>
+          <%= link_to"Books",
         </li>
         <li>
           <%= link_to"Log out",destroy_user_session_path,method: :delete %>
@@ -35,5 +41,14 @@
       <% end %>
     </header>
     <%= yield %>
+     <footer>
+    <div class='container mt-5'>
+      <div class='row'>
+        <div class='mx-auto'>
+          <p>CopyRight Infratop.inc</p>
+        </div>
+      </div>
+    </div>
+  </footer>
   </body>
 </html>

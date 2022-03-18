@@ -1,12 +1,11 @@
-<div>
-  <h3>User info</h3>
+<h3>User info</h3>
   <%= image_tag @user.get_profile_image(100,100) %>
   <h4>name</h4>
   <%= @user.name %>
   <h4>introduction</h4>
-</div>
 
-<h3>New book</h3>
+
+<h1>New book</h1>
   <%= form_with model:@book do |f| %>
   <h4>Title</h4>
     <%= f.text_field :title %>
@@ -14,14 +13,14 @@
   <h4>Opinion</h4>
     <%= f.text_field :body %>
   <%= f.submit'Create Book' %>
+
+
+  <h4>Books</h4>
+  <%= @books.each do |books| %>
+
+    <p><%= image_tag @user.get_profile_image(100,100) %></p>
+
+    <p>Title:<%= books.title %></p>
+    <p>Opinion:<%= books.body %></p>
+
 <% end %>
-
-<div>
-  <h3>Books</h3>
-
-  <%= @books.each do |book| %>
-  <p>Title:<%= book.title %></p>
-  <p>Opinion:<%= book.body %></p>
-
-
-</div>
