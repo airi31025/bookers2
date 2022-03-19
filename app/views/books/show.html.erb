@@ -7,6 +7,7 @@
   <p>Title:<%= @book.title %></p>
   <p>Opinion:<%= @book.body %></p>
 
-<%= if @user == current_user %>
-  <p><%= link_to "Edit",edit_book_path(@user) %></p>
+<%= if @book.user == current_user %>
+  <p><%= link_to "Edit",edit_book_path(@book) %></p>
+  <p><%= link_to "destroy",book_path(@book),method: :delete %></p>
 <% end %>
