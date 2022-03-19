@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookers</title>
+    <title>Bookers2</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,6 +13,10 @@
   <body>
     <header>
       <% if user_signed_in? %>
+        <li>
+          <%= link_to"Bookers",root_path %>
+        </li>
+
         <li>
           <%= link_to"Home",homes_top_path %>
         </li>
