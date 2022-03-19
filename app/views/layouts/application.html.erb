@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookers2</title>
+    <title>Bookers</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -17,10 +17,10 @@
           <%= link_to"Home",homes_top_path %>
         </li>
         <li>
-          <%= link_to"Users",
+          <%= link_to"Users",users_path %>
         </li>
         <li>
-          <%= link_to"Books",
+          <%= link_to"Books",books_path %>
         </li>
         <li>
           <%= link_to"Log out",destroy_user_session_path,method: :delete %>
