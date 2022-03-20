@@ -1,11 +1,26 @@
-<%= render'list',user:@user %>
+<div class="col-md-3"><%= render 'books/list',user: current_user %></div>
 
-  <h4>Books</h4>
-  <%= @books.each do |books| %>
-
-    <p><%= image_tag @user.get_profile_image(100,100) %></p>
-
-    <p>Title:<%= books.title %></p>
-    <p>Opinion:<%= books.body %></p>
-
-<% end %>
+<div class="col-md-8 offset-md-1">
+  <h2>Books</h2>
+  <table class="table table-hover table-inverse">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Opinion</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |books| %>
+        <tr>
+          <td><%= link_to user_path(books.user.id) do %>
+          <%= image_tag books.user.get_profile_image(100,100) %>
+          <% end %></td>
+          <td><%= link_to books.title,book_path(books.id) %></td>
+          <td><%= books.body %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,13 +1,13 @@
-<%= render'list',user:@user %>
+<%= render 'books/list',user: @book.user %>
 
 <h4>Book detail</h4>
 
-  <p><%= image_tag @user.get_profile_image(100,100) %></p>
+  <p><%= image_tag @book.user.get_profile_image(100,100) %></p>
 
   <p>Title:<%= @book.title %></p>
   <p>Opinion:<%= @book.body %></p>
 
-<%= if @book.user == current_user %>
+<% if @book.user == current_user %>
   <p><%= link_to "Edit",edit_book_path(@book) %></p>
   <p><%= link_to "destroy",book_path(@book),method: :delete %></p>
 <% end %>
