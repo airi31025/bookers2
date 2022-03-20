@@ -1,5 +1,27 @@
 <%= render'books/list',user:@user %>
 
+<h2>Books</h2>
+<table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= image_tag @user.get_profile_image(100,100) %></td>
+      <td><%= link_to books.title,book_path(books.id) %></td>
+      <td><%= books.body %></td>
+    </tr>
+  </tbody>
+
+
+</table>
+
+
 <div>
   <h3>Book detail</h3>
 
@@ -7,7 +29,7 @@
   <p>Title:<%= book.title %></p>
   <p>Opinion:<%= book.body %></p>
 
-  
+
 </div>
 
 
