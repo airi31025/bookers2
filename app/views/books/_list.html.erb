@@ -1,10 +1,23 @@
 <div>
   <h3>User info</h3>
   <%= image_tag user.get_profile_image(100,100) %>
-  <h4>name</h4>
-  <%= user.name %>
-  <h4>introduction</h4>
-  <p><%= link_to"Edit",edit_user_path(user) %></p>
+  <table class="table">
+    <tbody>
+      <tr></tr>
+      <tr>
+        <th>name</th>
+        <th><%= user.name %></th>
+      </tr>
+      <tr>
+        <th>introduction</th>
+        <th><%= user.introduction %></th>
+      </tr>
+    </tbody>
+  </table>
+
+  <%= link_to edit_user_path(user),class:'btn btn-outline-secondary btn-block' do %>
+  <i class="fas fa-user-cog"></i>
+  <% end %>
 </div>
 
 <div>
@@ -15,6 +28,9 @@
 
   <h4>Opinion</h4>
     <%= f.text_field :body %>
-  <%= f.submit'Create Book' %>
+    <div class="form-group">
+      <input type="submit" name="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book">
+    </div>
+
   <% end %>
 </div>
