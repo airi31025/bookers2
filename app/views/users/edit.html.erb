@@ -1,17 +1,28 @@
+
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <h2>User info</h2>
+
+      <% if @user.errors.any? %>
+        <%= @user.errors.count %>errors prohibited this obj from being saved:
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+        </ul>
+      <% end %>
+
         <%= form_with(model:@user, local:true) do |f| %>
 
       <h4>Name</h4>
-        <%= f.text_field :title %>
+        <%= f.text_field :name %>
 
       <h4>Image</h4>
         <%= f.file_field :profile_image,accept:"image/*"%>
 
       <h4>Introduction</h4>
-        <%= f.text_area :body %>
+        <%= f.text_area :introduction %>
 
       <div class="form-group">
         <input type="submit" name="commit" value="Update User" class="btn btn-secondary" data-disable-with="Uptate User">

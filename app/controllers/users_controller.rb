@@ -19,8 +19,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user = current_user
     if @user.update(user_params)
-      flash[:success] = 'You have updated user successfully'
+
       redirect_to user_path(@user)
+      flash[:notice] = 'You have updated user successfully'
     else
       render:edit
     end
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:title,:body,:profile_image)
+    params.require(:user).permit(:name,:introduction,:profile_image)
   end
 
 end
